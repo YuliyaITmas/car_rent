@@ -1,7 +1,7 @@
 {
   "name": "car-rent-project",
   "version": "0.1.0",
-  "homepage": "https://YuliyaITmas.github.io/car_rent/",
+  "homepage": "https://YuliyaITmas.github.io/car_rent",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
