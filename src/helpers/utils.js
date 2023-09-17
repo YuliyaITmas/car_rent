@@ -39,3 +39,40 @@ export const formatRentalPrice = (rentalPrice) => {
   const numericPart = rentalPrice.slice(1);
   return `${numericPart}${currencySymbol}`;
 };
+export const  generatePriceOptions = (maxPrice)=> {
+  const step = 10;
+  const options = [];
+  for (let price = 0; price <= maxPrice; price += step) {
+    options.push(price);
+  }
+  return options;
+}
+
+
+export const parseNumber = (value) => {
+  if (!value || isNaN(value)) {
+    return null;
+  }
+
+  return parseFloat(value);
+};
+
+export const filterCars = (cars, filter) => {
+  if (!filter) {
+    return cars;
+  }
+
+  return cars.filter((car) => {
+    const rentalPrice = parseInt(car.rentalPrice.substring(1));
+    const mileage = parseFloat(car.mileage);
+
+    const brandMatch =
+      !filter.brand || car.make.toLowerCase() === filter.brand.toLowerCase();
+    const priceMatch = !filter.price || rentalPrice <= filter.price;
+    const minMileageMatch = !filter.from || mileage >= filter.from;
+    const maxMileageMatch = !filter.to || mileage <= filter.to;
+
+    return brandMatch && priceMatch && minMileageMatch && maxMileageMatch;
+ 
+  });
+};

@@ -2,8 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = {
   favorites: [],
-  filter: null,
+  filter: [],
   error: null,
+  isLoaded: false,
+  items:[],
 };
 
 const carsSlice = createSlice({
@@ -18,8 +20,24 @@ const carsSlice = createSlice({
         (item) => item.id !== action.payload.id
       );
     },
+    setFilter(state, action) {
+      state.filter = action.payload;
+    },
+    resetFilter: (state) => {
+      state.filter = null;
+    },
+    setItems(state, action) {
+      state.items = action.payload
+      state.isLoaded = true
+    }
   },
 });
 
-export const { addToFavorites, removeFromFavorites } = carsSlice.actions;
+export const {
+  addToFavorites,
+  removeFromFavorites,
+  setFilter,
+  resetFilter,
+  setItems,
+} = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;

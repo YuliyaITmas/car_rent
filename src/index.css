@@ -36,7 +36,12 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+html::-webkit-scrollbar {
+  display: none;
+}
+
 
 body {
   margin: 0;

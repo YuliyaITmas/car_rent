@@ -106,7 +106,7 @@ export const Condition = styled.span`
 
 export const RentBtn = styled.a`
   display: flex;
-  width: 168px;
+  // width: 168px;
   padding: 12px 50px;
   justify-content: center;
   align-items: center;
