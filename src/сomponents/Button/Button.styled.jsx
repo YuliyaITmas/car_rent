@@ -69,17 +69,3 @@ export const Close = styled.button`
     }
   }
 `;
-
-// export const Arrow = styled.button`
-//   position: absolute;
-//   right: 10px;
-//   top: 16px;
-//   display: flex;
-//   width: 14px;
-//   height: 14px;
-//   align-items: center;
-//   background-color: transparent;
-//   transition: all 0.3s ease;
-//   color: #121417;
-//   z-index: 2000;
-// `;

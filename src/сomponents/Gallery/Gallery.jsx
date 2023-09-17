@@ -40,8 +40,6 @@ export const Gallery = () => {
   });
   const [allData, setAllData] = useState([]);
 
-  // const brands = [...new Set(allData.map((car) => car.make))];
-
   useEffect(() => {
     if (!isLoading && !isError && data && data.length > 0) {
       setAllData((prevData) => [...prevData, ...data]);

@@ -65,19 +65,3 @@ export const ButtonClose = ({
   );
 };
 
-// export const ButtonArrow = ({ id, type, ariaLabel, iconHref, style }) => {
-//   return (
-//     <Arrow id={id} type={type} ariaLabel={ariaLabel} style={style}>
-//       <Icon>
-//         <use href={iconHref} />
-//       </Icon>
-//     </Arrow>
-//   );
-// };
-// Button.propTypes = {
-//   type: PropTypes.string,
-//   ariaLabel: PropTypes.string,
-//   label: PropTypes.string.isRequired,
-//   onClick: PropTypes.func,
-//   id: PropTypes.string,
-// };

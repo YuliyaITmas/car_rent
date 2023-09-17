@@ -1,9 +1,7 @@
+import { Home } from "../сomponents/Home/Home";
+
 const HomePage = () => {
-  return (
-    <div style={{ paddingTop: "88px" }}>
-      <h1>Home Page</h1>
-    </div>
-  );
+  return <Home />;
 };
 
 export default HomePage;

@@ -1,26 +1,3 @@
-// import { Link } from "react-router-dom";
-// import Logo from "../../assets/images/logo.png";
-// import { StyledLink, NavWrap, LinkWrap, LogoImg } from "./Navigation.styled";
-
-// export const Navigation = () => {
-//   return (
-//     <NavWrap>
-//       <Link to="/">
-//         <LogoImg src={Logo} alt="logo" />
-//       </Link>
-
-//       <LinkWrap>
-//         <li>
-//           <StyledLink to="/catalog">Catalog</StyledLink>
-//         </li>
-
-//         <li>
-//           <StyledLink to="/favorites">Favorites</StyledLink>
-//         </li>
-//       </LinkWrap>
-//     </NavWrap>
-//   );
-// };
 
 import * as React from "react";
 import PropTypes from "prop-types";
@@ -39,6 +16,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { Logo } from "./Logo";
 
 const drawerWidth = 240;
 const navItems = ["Home", "Catalog", "Favorites"];
@@ -58,7 +36,12 @@ export const Navigation = (props) => {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <Link
+                to={`/${item.toLowerCase()}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <ListItemText primary={item} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -72,7 +55,7 @@ export const Navigation = (props) => {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" color="primary" enableColorOnDark>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -83,12 +66,18 @@ export const Navigation = (props) => {
           >
             <MenuIcon />
           </IconButton>
+          <Logo />
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5);",
+              fontSise: "12px",
+              display: { xs: "none", sm: "block" },
+            }}
           >
-            CarRent
+            {/* CarRent */}
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
@@ -97,7 +86,13 @@ export const Navigation = (props) => {
                 key={item}
                 style={{ textDecoration: "none" }}
               >
-                <Button key={item} sx={{ color: "#fff" }}>
+                <Button
+                  key={item}
+                  sx={{
+                    color: "#fff",
+                    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5);",
+                  }}
+                >
                   {item}
                 </Button>
               </Link>
