@@ -9,8 +9,8 @@ export const Favorite = () => {
 
   return (
     <>
-      {isFavorite.length>0 ? (
-        <Container>
+      {isFavorite.length > 0 ? (
+        <Container style={{ padding: "88px" }}>
           <List>
             {isFavorite.map((data) => (
               <CarItem key={data.id} data={data} />
@@ -18,9 +18,7 @@ export const Favorite = () => {
           </List>
         </Container>
       ) : (
-        <DefaultCar/>
-      
-      
+        <DefaultCar />
       )}
     </>
   );
